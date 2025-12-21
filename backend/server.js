@@ -11,6 +11,11 @@ app.use(cors());
 app.get('/', (req,res)=>{
     res.send('Hello')
 })
+app.get('/about', (req,res)=>{
+    console.log('about page');
+    res.send('about')
+})
+
 
 
 app.listen(port, ()=>{
