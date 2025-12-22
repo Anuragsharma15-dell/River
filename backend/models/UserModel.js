@@ -16,4 +16,4 @@ const UserModel = new mongoose.model({
 },{timestamps :true });
 
 
-const User = module.exports('User', UserModel);
+module.exports = UserModel;
