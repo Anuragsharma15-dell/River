@@ -17,4 +17,15 @@ router.post('/chat', async (req, res) => {
     }
 });
 
-r
+router.get('/chats/:userId',async (req,res)=>{
+    const{userId, RecieverId} = req.params;
+    try{
+        const chats = await ChatModel.find({
+            users: { $all: [userId, RecieverId] }
+        });
+        res.status(200).json({chats});
+    }catch(error){
+        console.log(error);
+        res.status(500).json({message: 'Internal server error'});
+    }
+})
