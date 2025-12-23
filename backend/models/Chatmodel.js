@@ -14,8 +14,15 @@ const ChatModel = new mongoose.model('chats',{
         type:String,
         required:true
     },
-    socket:{
-        
-    }
+   senderId:{
+    type:Schema.Types.ObjectId,
+    ref:'UserModel',
+    required:true
+   },
+   RecieverId:{
+    type:Schema.Types.ObjectId,
+    ref:'UserModel',
+    required:true
+   }
 
 });
